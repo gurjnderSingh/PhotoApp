@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18EA341928E97ACE00BE09AC /* SignupFormModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA341828E97ACE00BE09AC /* SignupFormModelValidator.swift */; };
+		18EA341B28E97D3D00BE09AC /* SignupConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA341A28E97D3D00BE09AC /* SignupConstants.swift */; };
 		18EE36AC28E8B81200499BA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE36AB28E8B81200499BA8 /* AppDelegate.swift */; };
 		18EE36AE28E8B81200499BA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE36AD28E8B81200499BA8 /* SceneDelegate.swift */; };
 		18EE36B028E8B81200499BA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EE36AF28E8B81200499BA8 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18EA341828E97ACE00BE09AC /* SignupFormModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFormModelValidator.swift; sourceTree = "<group>"; };
+		18EA341A28E97D3D00BE09AC /* SignupConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupConstants.swift; sourceTree = "<group>"; };
 		18EE36A828E8B81200499BA8 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EE36AB28E8B81200499BA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18EE36AD28E8B81200499BA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18EA341728E97AAA00BE09AC /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				18EA341828E97ACE00BE09AC /* SignupFormModelValidator.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		18EE369F28E8B81200499BA8 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		18EE36AA28E8B81200499BA8 /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
+				18EA341728E97AAA00BE09AC /* Signup */,
 				18EE36AB28E8B81200499BA8 /* AppDelegate.swift */,
 				18EE36AD28E8B81200499BA8 /* SceneDelegate.swift */,
 				18EE36AF28E8B81200499BA8 /* ViewController.swift */,
@@ -109,6 +122,7 @@
 				18EE36B928E8B81400499BA8 /* LaunchScreen.storyboard */,
 				18EE36BC28E8B81400499BA8 /* Info.plist */,
 				18EE36B428E8B81200499BA8 /* PhotoApp.xcdatamodeld */,
+				18EA341A28E97D3D00BE09AC /* SignupConstants.swift */,
 			);
 			path = PhotoApp;
 			sourceTree = "<group>";
@@ -262,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18EE36B628E8B81200499BA8 /* PhotoApp.xcdatamodeld in Sources */,
+				18EA341928E97ACE00BE09AC /* SignupFormModelValidator.swift in Sources */,
 				18EE36B028E8B81200499BA8 /* ViewController.swift in Sources */,
+				18EA341B28E97D3D00BE09AC /* SignupConstants.swift in Sources */,
 				18EE36AC28E8B81200499BA8 /* AppDelegate.swift in Sources */,
 				18EE36AE28E8B81200499BA8 /* SceneDelegate.swift in Sources */,
 			);
