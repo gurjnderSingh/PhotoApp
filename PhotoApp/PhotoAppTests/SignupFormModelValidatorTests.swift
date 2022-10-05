@@ -11,6 +11,7 @@ import XCTest
 class SignupFormModelValidatorTests: XCTestCase {
 
     var sut: SignupFormModelValidator!
+    
     override func setUp() {
         super.setUp()
         sut = SignupFormModelValidator()

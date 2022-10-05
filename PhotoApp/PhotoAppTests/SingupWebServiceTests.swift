@@ -9,9 +9,18 @@ import XCTest
 @testable import PhotoApp
 
 class SingupWebServiceTests: XCTestCase {
+    
+    var sut: SignupWebService!
+    var signFormRequestModel: SignupFormRequestModel!
 
     override func setUp() {
         super.setUp()
+        
+        let config = URLSessionConfiguration.ephemeral
+        config.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: config)
+        sut = SignupWebService(urlString: SignupConstants.signupURLString, urlSession: urlSession)
+        signFormRequestModel = SignupFormRequestModel(firstName: "Sergey", lasstName: "Kargopolov", email: "test@test.com", password: "12345678")
     }
 
     override func tearDown() {
@@ -19,13 +28,23 @@ class SingupWebServiceTests: XCTestCase {
     }
 
     func testSingupWebServiceTests_WhenGiveSuccessfullResponse_ReturnSucess() {
-        //Arrange
-        let sut = SignupWebService()
+
+        // Arrange
+        let jsonString = "{\"status\":\"Gurjinder Singh\"}"
+        MockURLProtocol.stubResponseData =  jsonString.data(using: .utf8)
         
-        let singupRequestModel = SignupFormRequestModel(firstName: "Gurinder", lasstName: "Singh", email: "gurjinders@gmail.com", password: "12345678")
-        sut.singup(withForm: singupRequestModel) { signUpResponseModel, error in
+        let expectation = self.expectation(description: "Signup Web Service Response Expectation")
+        
+        sut.signup(withForm: signFormRequestModel) { (signupResponseModel, error) in
+            
+            // Assert
+            //"{\"status\":\"ok\"}"
+            XCTAssertEqual(signupResponseModel?.status, "Gurjinder Singh")
+            expectation.fulfill()
             
         }
+        
+        self.wait(for: [expectation], timeout: 5)
     }
     
     
