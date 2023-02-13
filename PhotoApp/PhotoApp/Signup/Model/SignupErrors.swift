@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SignupError {
+enum SignupError: LocalizedError, Equatable {
     
     case invalidResponseModel
     case invalidRequestURLString
@@ -17,6 +17,7 @@ enum SignupError {
     case invalidEmail
     case invalidPassword
     case passwordsDoNotMatch
+    case responseModelParsingError
     
     var errorDescription: String? {
         switch self {
@@ -28,7 +29,8 @@ enum SignupError {
              .invalidLastName,
              .invalidEmail,
              .invalidPassword,
-             .passwordsDoNotMatch:
+             .passwordsDoNotMatch,
+             .responseModelParsingError:
             return ""
         }
     }

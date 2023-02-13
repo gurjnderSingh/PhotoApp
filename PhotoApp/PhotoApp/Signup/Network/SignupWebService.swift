@@ -43,7 +43,9 @@ struct SignupWebService: SignupWebServiceProtocol {
             if let data=data, let signupResponseModel = try? JSONDecoder().decode(SignupResponseModel.self, from: data) {
                 completionHandler(signupResponseModel, nil)
             } else {
-                completionHandler(nil, SignupError.invalidResponseModel)
+                //completionHandler(nil, SignupError.invalidResponseModel)
+                completionHandler(nil, SignupError.responseModelParsingError)
+                
             }
         }
         
