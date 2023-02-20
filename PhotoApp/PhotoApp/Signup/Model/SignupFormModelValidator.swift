@@ -8,7 +8,19 @@
 import Foundation
 
 
-struct SignupFormModelValidator {
+struct SignupFormModelValidator: SingupModelValidatorProtocol {
+    func isLastNameValid(firstName: String) -> Bool {
+        var isValid = true
+        if firstName.count < SignupConstants.lastNameMinLength || firstName.count > SignupConstants.lastNameMaxLength {
+            isValid = false
+        }
+        return isValid
+    }
+    
+    func isValidEmailFormatter(email: String) -> Bool {
+        return email.contains("@")
+    }
+    
     func isFirstNameValid(firstName: String) -> Bool {
         var isValid = true
         if firstName.count < SignupConstants.firstNameMinLength || firstName.count > SignupConstants.firstNameMaxLength {

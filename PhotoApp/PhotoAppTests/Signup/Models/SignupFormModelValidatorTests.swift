@@ -19,6 +19,7 @@ class SignupFormModelValidatorTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
+        sut = nil
     }
     
     func testSignupFormModelValidatorTests_WhenFirstNameProvided_ShouldReturnTrue() {
